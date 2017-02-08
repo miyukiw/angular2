@@ -4,24 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
 
-import { HelloComponent } from './hello/hello.component';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HelloComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'hello',
-        component: HelloComponent
-      }
-    ])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
