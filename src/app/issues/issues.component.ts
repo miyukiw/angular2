@@ -28,4 +28,8 @@ export class IssuesComponent implements OnInit {
     this.getIssues();
   }
 
+  toLink(number:Number) {
+    return `/issues/${number}`;
+  }
+
 }

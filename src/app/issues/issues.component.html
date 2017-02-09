@@ -3,6 +3,9 @@
 </h1>
 <ul>
   <li *ngFor="let issue of issues">
-    <small>{{issue.number}}</small> {{issue.title}}
+    <small>{{issue.number}}</small>
+    <a routerLink={{toLink(issue.number)}}>
+      {{issue.title}}
+    </a>
   </li>
 </ul>
