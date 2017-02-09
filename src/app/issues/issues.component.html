@@ -1,3 +1,8 @@
-<p>
-  issues works!
-</p>
+<h1>
+  Angular Issues
+</h1>
+<ul>
+  <li *ngFor="let issue of issues">
+    <small>{{issue.number}}</small> {{issue.title}}
+  </li>
+</ul>

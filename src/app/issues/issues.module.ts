@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IssuesRoutingModule } from './issues-routing.module';
 import { IssuesComponent } from './issues.component';
 import { IssuesDetailComponent } from './issues-detail.component';
+import { IssuesService } from './issues.service';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { IssuesDetailComponent } from './issues-detail.component';
   declarations: [
     IssuesComponent,
     IssuesDetailComponent
-  ]
+  ],
+  providers: [IssuesService]
 })
 export class IssuesModule { }
