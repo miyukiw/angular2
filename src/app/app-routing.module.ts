@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HelloModule } from "./hello/hello.module";
-
-export function loadHelloModule(): any {
-  return HelloModule;
-}
 
 export const routes: Routes = [
   {
     path: 'hello',
-    loadChildren: loadHelloModule,
+    loadChildren: "./hello/hello.module#HelloModule",
   }
 ];
 
