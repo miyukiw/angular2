@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IssuesRoutingModule } from './issues-routing.module';
-import { IssuesComponent } from './issues.component';
-import { IssuesDetailComponent } from './issues-detail.component';
+import { IssuesComponent } from './list/issues.component';
+import { IssuesDetailComponent } from './detail/issues-detail.component';
 import { IssuesService } from './issues.service';
 
 @NgModule({
