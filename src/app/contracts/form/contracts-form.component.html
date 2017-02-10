@@ -1,0 +1,25 @@
+<h2>Contracts Form</h2>
+<form [formGroup]="contractsForm" novalidate>
+  <div class="form-group">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="name">
+    </label>
+    <p>pristine: {{ contractsForm.get('name').pristine | json }}</p>
+    <p>untouched: {{ contractsForm.get('name').untouched | json }}</p>
+  </div>
+  <div formGroupName="address">
+    <div class="form-group">
+      <label class="center-block">Zipcode:
+        <input class="form-control" formControlName="zipcode">
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">City:
+        <input class="form-control" formControlName="city">
+      </label>
+    </div>
+  </div>
+</form>
+<p>Form value: {{ contractsForm.value | json }}</p>
+<p>Form status: {{ contractsForm.status | json }}</p>
+<button class="btn btn-primary" [disabled]="contractsForm.status === 'INVALID'">submit</button>

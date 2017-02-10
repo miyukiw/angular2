@@ -9,6 +9,10 @@ export const routes: Routes = [
   {
     path: 'issues',
     loadChildren: "./issues/issues.module#IssuesModule",
+  },
+  {
+    path: 'contracts',
+    loadChildren: "./contracts/contracts.module#ContractsModule",
   }
 ];
 
