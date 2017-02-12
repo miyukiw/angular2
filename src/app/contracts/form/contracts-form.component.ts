@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { ExtraValidators } from '../../shared/form/form-group-input/form-group-input.component'
 @Component({
   selector: 'contracts-form',
   templateUrl: './contracts-form.component.html',
   styleUrls: ['./contracts-form.component.css']
 })
+
 export class ContractsFormComponent implements OnInit {
 
   contractsForm: FormGroup
@@ -15,15 +17,18 @@ export class ContractsFormComponent implements OnInit {
 
   createForm() {
     this.contractsForm = this.fb.group({
-      test: [
+      name: [''],
+      kana: [
         '',
         [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(8)
+          ExtraValidators.conditional(
+            contractsForm => {
+              return Boolean(contractsForm.get('name').value)
+            },
+            Validators.required
+          ),
         ]
       ],
-      name: ['', Validators.required ],
       address: this.fb.group({ // <-- the child FormGroup
         zipcode: ['', Validators.required ],
         city: ['', Validators.required ],

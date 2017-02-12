@@ -1,10 +1,7 @@
 <h2>Contracts Form</h2>
 <form [formGroup]="contractsForm" novalidate (ngSubmit)="onSubmit($event)">
-  <input class="form-control" name="test" formControlName="test">
-  <p>valid: {{ contractsForm.get('test').valid | json }}</p>
-  <p>errors: {{ contractsForm.get('test').errors | json }}</p>
-
   <form-group-input [control]="contractsForm" [key]="'name'"></form-group-input>
+  <form-group-input [control]="contractsForm" [key]="'kana'"></form-group-input>
   <div formGroupName="address">
     <form-group-input [control]="contractsForm.get('address')" [key]="'zipcode'"></form-group-input>
     <form-group-input [control]="contractsForm.get('address')" [key]="'city'"></form-group-input>
