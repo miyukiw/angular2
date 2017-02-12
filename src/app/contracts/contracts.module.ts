@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ContractsRoutingModule } from './contracts-routing.module';
 import { ContractsComponent } from './contracts.component';
 import { ContractsFormComponent } from './form/contracts-form.component';
+import { FormGroupInputComponent } from '../shared/form/form-group-input/form-group-input.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { ContractsFormComponent } from './form/contracts-form.component';
   ],
   declarations: [
     ContractsComponent,
-    ContractsFormComponent
+    ContractsFormComponent,
+    FormGroupInputComponent,
   ],
   providers: []
 })

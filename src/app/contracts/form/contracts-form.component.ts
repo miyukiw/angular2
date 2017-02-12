@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-
 @Component({
   selector: 'contracts-form',
   templateUrl: './contracts-form.component.html',
@@ -16,10 +15,18 @@ export class ContractsFormComponent implements OnInit {
 
   createForm() {
     this.contractsForm = this.fb.group({
+      test: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(8)
+        ]
+      ],
       name: ['', Validators.required ],
       address: this.fb.group({ // <-- the child FormGroup
         zipcode: ['', Validators.required ],
-        city: '',
+        city: ['', Validators.required ],
         street: '',
         buildingName: ''
       }),
@@ -36,6 +43,10 @@ export class ContractsFormComponent implements OnInit {
         buidingName: ''
       }
     });
+  }
+
+  onSubmit(e) {
+    debugger
   }
 
 }
