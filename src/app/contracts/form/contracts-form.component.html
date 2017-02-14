@@ -6,6 +6,7 @@
     <form-group-input [control]="contractsForm.get('address')" [key]="'zipcode'"></form-group-input>
     <form-group-input [control]="contractsForm.get('address')" [key]="'city'"></form-group-input>
   </div>
+  <repo-search [control]="contractsForm" [key]="'repo-id'"></repo-search>
   <button type="submit" class="btn btn-primary" [disabled]="contractsForm.status === 'INVALID'">submit</button>
 </form>
 <p>Form value: {{ contractsForm.value | json }}</p>

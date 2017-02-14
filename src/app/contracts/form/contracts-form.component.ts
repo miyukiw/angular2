@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ExtraValidators } from '../../shared/form/form-group-input/form-group-input.component'
+import { RepoSearchComponent } from './repo-search/repo-search.component'
 @Component({
   selector: 'contracts-form',
   templateUrl: './contracts-form.component.html',
@@ -17,6 +18,7 @@ export class ContractsFormComponent implements OnInit {
 
   createForm() {
     this.contractsForm = this.fb.group({
+      'repo-id': ['', Validators.required],
       name: [''],
       kana: [
         '',

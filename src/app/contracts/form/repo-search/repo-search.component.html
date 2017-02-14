@@ -1,0 +1,14 @@
+<h3>
+  repo-search
+</h3>
+
+<div class="form-group" [class.has-danger]="searchFailed">
+  <input type="text" class="form-control" (ngModelChange)="onChangeModel($event)" [(ngModel)]="model" [ngbTypeahead]="search" [resultFormatter]="resultFormatter" [inputFormatter]="inputFormatter" placeholder="github repos search" />
+  <p *ngIf="searching">searching...</p>
+  <input type="text" [ngModel]="control.get(key).value" />
+  <div class="form-control-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+</div>
+<!--
+<pre>Model: {{ model | json }}</pre>
+-->
+<hr>
