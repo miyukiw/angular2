@@ -32,7 +32,13 @@ export class ContractsFormComponent implements OnInit {
         ]
       ],
       address: this.fb.group({ // <-- the child FormGroup
-        zipcode: ['', Validators.required ],
+        zipcode: ['', [
+            Validators.required,
+            Validators.minLength(7),
+            Validators.maxLength(7),
+            Validators.pattern(/^[0-9]{7}$/)
+          ]
+        ],
         city: ['', Validators.required ],
         street: '',
         buildingName: ''

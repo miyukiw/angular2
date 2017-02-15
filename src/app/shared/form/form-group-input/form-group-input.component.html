@@ -2,8 +2,5 @@
   <label class="center-block">{{key}}:
     <input class="form-control" name={{key}} formControlName={{key}}>
   </label>
-  <p>errors: {{ control.get(key).errors | json }}</p>
-  <p>valid: {{ control.get(key).valid | json }}</p>
-  <p>pristine: {{ control.get(key).pristine | json }}</p>
-  <p>untouched: {{ control.get(key).untouched | json }}</p>
+  <p class="text-danger" *ngIf="control.get(key).errors && control.get(key).touched">errors: {{ control.get(key).errors | json }}</p>
 </div>
